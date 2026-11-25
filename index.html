@@ -206,6 +206,11 @@
         <option value="ita">Italienisch</option>
         <option value="spa">Spanisch</option>
         <option value="tur">Türkisch</option>
+        <option value="ara">Arabisch</option>
+        <option value="rus">Russisch</option>
+        <option value="ukr">Ukrainisch</option>
+        <option value="ron">Rumänisch</option>
+        <option value="ell">Griechisch</option>
       </select>
       <p class="hint" id="trHint" hidden>Zum Übersetzen wird der Text an den kostenlosen Dienst MyMemory gesendet. Es gibt ein Tageslimit, und die Qualität ist nur ausreichend. Bitte das Ergebnis prüfen.</p>
       <div class="drop" id="dropZone">
@@ -214,7 +219,7 @@
         <span class="hint">Mehrere Bilder sind möglich. Du kannst sie auch hierher ziehen oder mit Strg+V einfügen. Der erkannte Text erscheint unten und lässt sich korrigieren.</span>
         <div class="ocr-status" id="ocrStatus" hidden></div>
       </div>
-      <textarea id="pasteText" placeholder="Rezept für 3 Portionen:&#10;- 500g Magerquark&#10;- 200g Pudding&#10;&#10;Zubereitung:&#10;1. Alles verrühren"></textarea>
+      <textarea id="pasteText" dir="auto" placeholder="Rezept für 3 Portionen:&#10;- 500g Magerquark&#10;- 200g Pudding&#10;&#10;Zubereitung:&#10;1. Alles verrühren"></textarea>
       <div class="ocr-status" id="trStatus" hidden style="margin-top:8px"></div>
       <div class="actions">
         <button class="btn" id="parseBtn">Text übernehmen</button>
@@ -534,7 +539,7 @@
   });
 
   // Übersetzen ins Deutsche (MyMemory, kostenlos, Internet nötig)
-  const ISO = { eng: "en", fra: "fr", ita: "it", spa: "es", tur: "tr" };
+  const ISO = { eng: "en", fra: "fr", ita: "it", spa: "es", tur: "tr", ara: "ar", rus: "ru", ukr: "uk", ron: "ro", ell: "el" };
   const decodeHtml = (s) => { const t = document.createElement("textarea"); t.innerHTML = s; return t.value; };
   const byteLen = (s) => new TextEncoder().encode(s).length;
 
